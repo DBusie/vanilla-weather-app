@@ -1,3 +1,6 @@
+.container {
+  background: #cbdae7;
+}
 h1 {
   color: red;
   text-align: center;
@@ -6,14 +9,4 @@ h1 {
 h1:hover {
   color: blue;
   font-size: 200px;
-}
-
-p {
-  color: #6c0675;
-  font-size: 20px;
-  font-weight: 500;
-}
-p:hover {
-  color: #ec68f8;
-  font-size: 100px;
 }
