@@ -1,6 +1,29 @@
 .container {
   background: #e9f0f7;
 }
+.forecast {
+  background: #fcfccc;
+  margin: 0 auto;
+  border-radius: 25px;
+  margin-bottom: 50px;
+  height: 500px;
+}
+.search {
+  background: #d7fce8;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-radius: 45px;
+  height: 500px;
+}
+.elements {
+  position: relative;
+  line-height: 30px;
+  left: 150px;
+  bottom: 80px;
+}
+.city {
+  background: #d4dfd9;
+}
 .feel {
   position: relative;
   left: 450px;
