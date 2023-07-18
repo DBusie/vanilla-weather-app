@@ -2,18 +2,19 @@
   background: #e9f0f7;
 }
 .forecast {
-  background: #fcfccc;
+  background: #ffb14ae5;
   margin: 0 auto;
   border-radius: 25px;
   margin-bottom: 50px;
   height: 500px;
 }
 .search {
-  background: #d7fce8;
+  background: #c7fce0;
   margin: 0 auto;
   margin-bottom: 50px;
   border-radius: 45px;
   height: 500px;
+  width: 800px;
 }
 .elements {
   position: relative;
@@ -31,7 +32,7 @@
   line-height: 30px;
 }
 h1 {
-  color: red;
+  color: #fc9004e5;
   text-align: center;
   font-size: 70px;
 }
