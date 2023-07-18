@@ -15,16 +15,33 @@
   </head>
   <body>
     <div class="container">
+      <div class="card-body">
+        <input
+          type="text"
+          class="form-control w-50"
+          placeholder="Search city..."
+          autofocus="on"
+        />
+        <button type="submit" class="btn btn-warning">Search</button>
+      </div>
       <div class="card" style="width: 800px">
-        <div class="card-body">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Search city..."
-          />
-          <input type="submit" class="btn btn-warning" />
+        <h2 class="card col-4" id="city">City</h2>
 
-          <div class="city">byo</div>
+        <h1 class="card col-2 row align-items-start" id="temperature">Temp</h1>
+        <div class="card col-3 row align-items-center" id="date">
+          Day Date Time
+        </div>
+
+        <div class="card col-2 row align-items-start" id="description">
+          clear skies
+        </div>
+        <div class="card col-2 row align-items-center" id="feel">
+          feels like
+        </div>
+
+        <div class="row align-items-start">
+          <div class="col-3" id="wind">Wind speed</div>
+          <div class="col-3" id="humidity">Humidity</div>
         </div>
       </div>
     </div>
