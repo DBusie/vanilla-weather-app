@@ -15,42 +15,43 @@
   </head>
   <body>
     <div class="container">
-      <div class="card-body">
-        <input
-          type="text"
-          class="form-control w-50"
-          placeholder="Search city..."
-          autofocus="on"
-        />
-        <button type="submit" class="btn btn-warning">Search</button>
-      </div>
-      <div class="card" style="width: 800px">
-        <h2 class="card col-4 p-1 m-4" id="city">City</h2>
-        <div class="d-grid gap-1 mt-0 p-4">
-          <h1 class="card col-2 row align-items-start" id="temperature">
-            Temp
-          </h1>
-          <div class="card col-3 row align-items-center" id="date">
-            Day Date Time
-          </div>
+      <div class="card col-9 forecast">
+        <div class="card-body">
+          <input
+            type="text"
+            class="form-control w-50 input"
+            placeholder="Search city..."
+            autofocus="on"
+          />
+          <button type="submit" class="btn btn-warning">Search</button>
         </div>
-
-        <div class="d-grid gap-2 feel">
-          <div class="card col-2 row align-items-start" id="description">
-            clear skies
+        <div class="card col-8 search">
+          <h2 class="card col-4 p-1 m-4 city"><span id="city"></span>City</h2>
+          <div class="d-grid gap-1 mt-0 p-4">
+            <h1 class="col-2 row align-items-start">
+              Temp <span id="temperature"></span>
+            </h1>
+            <h4 class="col-3 row align-items-center" id="date">
+              Day Date Time
+            </h4>
           </div>
-          <div class="card col-2 row align-items-center" id="feel">
-            feels like
-          </div>
-        </div>
 
-        <div class="row align-items-start">
-          <div class="col-3" id="wind">Wind speed</div>
-          <div class="col-3" id="humidity">Humidity</div>
+          <div class="d-grid gap-2 feel">
+            <div class="col-2 row align-items-start" id="description">
+              clear skies
+            </div>
+            <div class="col-2 row align-items-center">
+              Real feel: <span id="feel"></span>
+            </div>
+          </div>
+
+          <div class="row align-items-start elements">
+            <div class="col-3">Wind speed: <span id="wind"></span> KMH</div>
+            <div class="col-3">Humidity:<span id="humidity"></span> %</div>
+          </div>
         </div>
       </div>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>
