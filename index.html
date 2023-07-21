@@ -10,35 +10,46 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="styles.css" type="text/css" />
     <title>Vanilla Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <div class="card col-9 forecast">
+    <div class="container"> 
+          
+            <div class="card col-9 forecast">
+              <small class="footer">
+        <a
+          href="https://github.com/DBusie/vanilla-weather-app"
+          ,
+          target="_blank"
+          >open-source code </a
+        >by Busi Shumba
+              
         <div class="card-body">
           <input
             type="text"
             class="form-control w-50 input"
             placeholder="Search city..."
             autofocus="on"
-          />
-          <button type="submit" class="btn btn-warning">Search</button>
-        </div>
-        <div class="card col-8 search">
-          <h2 class="card col-4 p-1 m-4 city"><span id="city"></span>City</h2>
+          /><span><button type="submit" class="btn btn-warning">Search</button></span>
+          
+        <div>
+          <div class="card search">
+          <h2 class="card col-4 p-1 m-4 city"><span id="city"></span></h2>
           <div class="d-grid gap-1 mt-0 p-4">
-            <h1 class="col-2 row align-items-start">
-              Temp <span id="temperature"></span>
+            <h1 class="col-2 row align-items-start" id="temperature">
+              
             </h1>
+            <small class="units"><span id="celsius">C</span><a href="#" id="fahrenheit">F</a></small>
             <h4 class="col-3 row align-items-center" id="date">
-              Day Date Time
+              Monday 5 July <div id="time">13:05</div>  
             </h4>
           </div>
 
           <div class="d-grid gap-2 feel">
             <div class="col-2 row align-items-start" id="description">
-              clear skies
+              
             </div>
             <div class="col-2 row align-items-center">
               Real feel: <span id="feel"></span>
@@ -46,12 +57,16 @@
           </div>
 
           <div class="row align-items-start elements">
-            <div class="col-3">Wind speed: <span id="wind"></span> KMH</div>
-            <div class="col-3">Humidity:<span id="humidity"></span> %</div>
+            <div class="col-3">Wind speed:  <span id="wind"></span> KMH</div>
+            <div class="col-3">Humidity:  <span id="humidity"></span> %</div>
+            
           </div>
+         
         </div>
-      </div>
-    </div>
+                </div>        
+              </div>       
+            </div></div></div></div></div></div>
+
     <script src="app.js"></script>
   </body>
 </html>
