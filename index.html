@@ -27,22 +27,36 @@
         >by Busi Shumba
               
         <div class="card-body">
-          <input
-            type="text"
-            class="form-control w-50 input"
+          <form id="search-form" class="mb-2">
+<div class="row">
+            <div class="col-7">
+<input
+            type="search"
+            class="form-control w-150 input"
             placeholder="Search city..."
             autofocus="on"
-          /><span><button type="submit" class="btn btn-warning">Search</button></span>
+            id="city-input"
+            autocomplete="off"
+          />
+          </div>
+          <div class="col-4">
+            <input type="submit"  value="Search" class="btn btn-primary w-100"/></div>
+
+          </div>
+          </form>
+          
+          
+          
           
         <div>
           <div class="card search">
-          <h2 class="card col-4 p-1 m-4 city"><span id="city"></span></h2>
+          <h2 class="card col-5 p-1 m-4 city"><span id="city"></span></h2>
           <div class="d-grid gap-1 mt-0 p-4">
             <img src="" alt="" id="icon">
             <h1 class="col-2 row align-items-start" id="temperature">
               
             </h1>
-            <small class="units"><span id="celsius">C</span><a href="#" id="fahrenheit">F</a></small>
+            <small class="units"><span id="celsius">°C l </span><a href="#" id="fahrenheit">°F</a></small>
             <h4 class="col-3 row align-items-center" id="time">Last updated:
                <div id="date"></div>  
                
@@ -54,7 +68,7 @@
               
             </div>
             <div class="col-2 row align-items-center">
-              Real feel: <span id="feel"></span>
+             <div Real feel: ><span id="feel"></span> °</div>
             </div>
           </div>
 
