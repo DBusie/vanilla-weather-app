@@ -24,32 +24,32 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
   let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = Math.round(response.data.main.temp);
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector("#feel").innerHTML = Math.round(
-    response.data.main.feels_like
+  let cityElement = document.querySelector("#city");
+  let weatherElement = document.querySelector("#description");
+  let realFeelElement = document.querySelector("#feel");
+  let windElement = document.querySelector("#wind");
+  let humidityElement = document.querySelector("#humidity");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
+  celsiusTemperature = response.data.main.temp;
+
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.name;
+  weatherElement.innerHTML = response.data.weather[0].description;
+  realFeelElement.innerHTML = Math.round(response.data.main.feels_like);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  humidityElement.innerHTML = response.data.main.humidity;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
+
+  iconElement.setAttribute(
+    "alt",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].description}.png`
   );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#date").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
-  document
-    .querySelector("#icon")
-    .setAttribute(
-      "src",
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
-    );
-  document
-    .querySelector("#icon")
-    .setAttribute(
-      "alt",
-      `https://openweathermap.org/img/wn/${response.data.weather[0].description}.png`
-    );
 }
 
 function search(city) {
@@ -64,7 +64,32 @@ function handleSubmit(event) {
   search(cityElement.value);
 }
 
-search("Lecce");
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+search("Lecce");

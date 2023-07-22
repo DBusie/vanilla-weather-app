@@ -42,9 +42,21 @@ h1 {
 .description {
   text-transform: capitalize;
 }
+
 .units {
   position: relative;
   bottom: 70px;
   right: 300px;
   font-size: 16px;
+}
+.temperature {
+  text-decoration: none;
+  cursor: default;
+}
+.active {
+  color: black;
+}
+.active:hover {
+  text-decoration: none;
+  cursor: default;
 }
