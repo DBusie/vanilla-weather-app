@@ -39,7 +39,8 @@
 #date,
 #wind,
 #humidity,
-#feel {
+#feel,
+#city {
   color: #4f07f8;
 }
 
