@@ -36,6 +36,13 @@
   bottom: 20px;
 }
 
+#date,
+#wind,
+#humidity,
+#feel {
+  color: #4f07f8;
+}
+
 .city,
 .search-city {
   background: #fcffe7;
