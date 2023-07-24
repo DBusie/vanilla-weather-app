@@ -2,8 +2,9 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
-    `hours = 0${hours}`;
+    `hours = (0${hours}`;
   }
+  console.log(hours);
   let minutes = date.getMinutes();
   if (minutes < 10) {
     `minutes = 0${minutes}`;
@@ -43,12 +44,12 @@ function displayTemperature(response) {
 
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+    `https://openweathermap.org/img/w/${response.data.weather[0].icon}.png`
   );
 
   iconElement.setAttribute(
     "alt",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].description}.png`
+    `https://openweathermap.org/img/w/${response.data.weather[0].description}.png`
   );
 }
 
