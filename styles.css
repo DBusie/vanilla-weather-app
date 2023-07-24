@@ -1,35 +1,52 @@
-.container {
-  background: #e9f0f7;
-}
 .forecast {
-  background: #ffb14ae5;
+  background: #f89007;
   margin: 0 auto;
   border-radius: 25px;
   margin-bottom: 50px;
-  height: 500px;
+  max-height: 500px;
+  max-width: 700px;
+  margin-top: 50px;
 }
 .search {
-  background: #c7fce0;
+  background: #c7fcde;
   margin: 0 auto;
   margin-bottom: 50px;
   border-radius: 45px;
-  height: 500px;
-  width: 800px;
+  height: 400px;
+  max-width: 700px;
 }
 .elements {
   position: relative;
   line-height: 30px;
-  left: 150px;
-  bottom: 80px;
+  left: 10px;
+  bottom: 10px;
 }
-.city {
-  background: #d4dfd9;
+#temperature {
+  position: relative;
+  left: 100px;
+  bottom: 90px;
+}
+#icon {
+  position: relative;
+  left: 25px;
+  bottom: 20px;
+}
+.units {
+  position: relative;
+  bottom: 2px;
+  left: 50px;
+  color: red;
+}
+.city,
+.search-city {
+  background: #fcffe7;
+  line-height: 30px;
+  text-align: center;
 }
 .feel {
   position: relative;
-  left: 450px;
-  bottom: 120px;
-  line-height: 30px;
+  left: 350px;
+  bottom: 320px;
 }
 h1 {
   color: #fc9004e5;
@@ -37,7 +54,7 @@ h1 {
   font-size: 60px;
 }
 .footer {
-  text-align: center;
+  text-shadow: #f89007;
 }
 .description {
   text-transform: capitalize;
@@ -46,7 +63,7 @@ h1 {
 .units {
   position: relative;
   bottom: 70px;
-  right: 300px;
+  left: 80px;
   font-size: 16px;
 }
 .temperature {

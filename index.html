@@ -18,13 +18,7 @@
     <div class="container"> 
           
             <div class="card col-9 forecast">
-              <small class="footer">
-        <a
-          href="https://github.com/DBusie/vanilla-weather-app"
-          ,
-          target="_blank"
-          >open-source code </a
-        >by Busi Shumba
+              
               
         <div class="card-body">
           <form id="search-form" class="mb-2">
@@ -37,10 +31,11 @@
             autofocus="on"
             id="city-input"
             autocomplete="off"
+            class="search-city"
           />
           </div>
           <div class="col-4">
-            <input type="submit"  value="Search" class="btn btn-primary w-100"/></div>
+            <input type="submit"  value="Search" class="btn btn-dark w-100"/></div>
 
           </div>
           </form>
@@ -52,23 +47,20 @@
           <div class="card search">
           <h2 class="card col-5 p-1 m-4 city"><span id="city"></span></h2>
           <div class="d-grid gap-1 mt-0 p-4">
-            <img src="" alt="" id="icon">
+            <img src="" alt="" id="icon"/>
             <h1 class="col-2 row align-items-start" id="temperature">
               
             </h1>
             <small class="units"><a herf="#" id="celsius" class="active temperature">°C</a> l <a href="#" id="fahrenheit" class="temperature">°F</a></small>
-            <h4 class="col-3 row align-items-center" id="time">Last updated:
-               <div id="date"></div>  
-               
+            <h4 class="row align-items-center" id="time">Last updated:  <span id="date"></span>          
             </h4>
           </div>
 
           <div class="d-grid gap-2 feel">
-            <div class="col-2 row align-items-start description" id="description">
-              
+              <div class="col-3 row align-items-start description" id="description">
             </div>
-            <div class="col-2 row align-items-center">
-             <div Real feel: ><span id="feel"></span> °</div>
+            <div class="col-3 row align-items-center">
+             <div>Feels like:  <span id="feel"></span> °</div>
             </div>
           </div>
 
@@ -79,7 +71,12 @@
           </div>
          
         </div>
-                </div>        
+                </div>  <small class="footer">
+        <a
+          href="https://github.com/DBusie/vanilla-weather-app"
+          ,
+          target="_blank">open-source code </a
+        >by Busi Shumba</small>      
               </div>       
             </div></div></div></div></div></div>
 
