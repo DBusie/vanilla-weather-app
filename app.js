@@ -23,6 +23,34 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast-weather");
+
+  let forecastHTML = `<div class="row">`;
+  //forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div class="forecast-date">${day}
+              </div>
+              
+        <img src="https://openweathermap.org/img/w/10d.png" alt=""/>
+        <div class="forecast-temperature">
+          <span class="forecast-max">18</span>°   <span class="forecast-min">7</span>°   
+        </div>
+        
+            
+          
+         </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let tempElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -94,3 +122,5 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("kadoma");
+
+displayForecast();
