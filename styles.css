@@ -8,7 +8,7 @@
   margin-top: 50px;
 }
 .search {
-  background: #c7fcde;
+  background: #e7fffe;
   margin: 0 auto;
   margin-bottom: 50px;
   border-radius: 45px;
@@ -44,7 +44,10 @@
   color: #4f07f8;
 }
 
-.city,
+.city {
+  line-height: 30px;
+  text-align: center;
+}
 .search-city {
   background: #fcffe7;
   line-height: 30px;
@@ -62,6 +65,9 @@ h1 {
 }
 .footer {
   text-shadow: #f89007;
+}
+.coder-link {
+  text-decoration: none;
 }
 .description {
   text-transform: capitalize;

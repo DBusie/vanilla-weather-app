@@ -4,11 +4,12 @@ function formatDate(timestamp) {
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  console.log(hours);
+
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
   let days = [
     "Sunday",
     "Monday",
@@ -23,32 +24,49 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast-weather");
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast-weather");
   let forecastHTML = `<div class="row">`;
-  //forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-2">
-              <div class="forecast-date">${day}
+              <div class="forecast-date">${formatDay(forecastDay.dt)}
               </div>
               
-        <img src="https://openweathermap.org/img/w/10d.png" alt=""/>
+        <img src="https://openweathermap.org/img/w/${
+          forecastDay.weather[0].icon
+        }.png" alt=""/>
         <div class="forecast-temperature">
-          <span class="forecast-max">18</span>°   <span class="forecast-min">7</span>°   
-        </div>
-        
-            
-          
-         </div>`;
+          <span class="forecast-max">${Math.round(
+            forecastDay.temp.max
+          )}</span>°   <span class="forecast-min">${Math.round(
+          forecastDay.temp.min
+        )}</span>°   
+        </div>                 
+                   </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  //let apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
+  let apiKey = "5e31eddd9b83339ff8cc05bb6263bcc3";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -79,6 +97,7 @@ function displayTemperature(response) {
     "alt",
     `https://openweathermap.org/img/w/${response.data.weather[0].description}.png`
   );
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -122,5 +141,3 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("kadoma");
-
-displayForecast();
