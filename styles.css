@@ -16,24 +16,17 @@
   max-width: 700px;
 }
 .elements {
-  position: relative;
   line-height: 30px;
-  left: 300px;
-  bottom: 240px;
 }
 #temperature {
-  position: relative;
-  left: 100px;
-  bottom: 90px;
+  color: #fc9004e5;
+  font-size: 60px;
+  font-weight: 700;
 }
-#time {
-  position: relative;
-  bottom: 120px;
-}
+
 #icon {
-  position: relative;
-  left: 2px;
-  bottom: 1px;
+  margin-bottom: -16px;
+  margin-top: -12px;
 }
 
 #date,
@@ -53,53 +46,35 @@
   line-height: 30px;
   text-align: center;
 }
-.feel {
-  position: relative;
-  left: 370px;
-  bottom: 250px;
-}
-h1 {
-  color: #fc9004e5;
-  text-align: center;
-  font-size: 60px;
-}
-.footer {
-  text-shadow: #f89007;
-}
+
 .coder-link {
   text-decoration: none;
 }
 .description {
   text-transform: capitalize;
 }
-
-.temperature {
-  text-decoration: none;
-  cursor: default;
+.update {
+  margin-left: 20px;
 }
-
+ul {
+  list-style: none;
+}
+.measure {
+  line-height: 26px;
+}
+.weather-icon {
+  padding-left: calc(var(--bs-gutter-x) * 2.5);
+}
 .units {
-  color: #fc9004e5;
+  color: #110202;
   position: relative;
-  bottom: 160px;
-  left: 155px;
-  font-size: 16px;
-}
-
-.active {
-  color: black;
-}
-.active:hover {
-  text-decoration: none;
-  cursor: default;
+  bottom: 29px;
 }
 
 .forecast-weather {
   margin-top: 20px;
   text-align: center;
   color: black;
-  position: relative;
-  bottom: 180px;
 }
 
 .forecast-date {
