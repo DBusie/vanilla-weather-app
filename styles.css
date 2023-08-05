@@ -3,16 +3,16 @@
   margin: 0 auto;
   border-radius: 25px;
   margin-bottom: 50px;
-  max-height: 500px;
+  max-height: 510px;
   max-width: 700px;
   margin-top: 50px;
 }
 .search {
-  background: #e7fffe;
+  background: #e7ffee;
   margin: 0 auto;
   margin-bottom: 50px;
   border-radius: 45px;
-  height: 400px;
+  height: 420px;
   max-width: 700px;
 }
 .elements {
@@ -47,14 +47,20 @@
   text-align: center;
 }
 
-.coder-link {
+.footer {
   text-decoration: none;
+  text-align: center;
+}
+#footer {
+  color: #720ef5;
+  font-size: 12px;
 }
 .description {
   text-transform: capitalize;
 }
 .update {
   margin-left: 20px;
+  font-size: 12px;
 }
 ul {
   list-style: none;
@@ -72,19 +78,21 @@ ul {
 }
 
 .forecast-weather {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   text-align: center;
-  color: black;
+  color: #110202;
 }
 
 .forecast-date {
   font-size: 16px;
-  color: #68706b;
+  color: #110202;
 }
 
 .forecast-temperature {
   font-size: 13px;
+  color: #fc9004e5;
 }
 .forecast-min {
-  opacity: 0.5;
+  opacity: 0.9;
 }

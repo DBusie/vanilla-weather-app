@@ -12,78 +12,74 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="styles.css" type="text/css" />
-    <title>Vanilla Weather App</title>
+    <title>Vanilla Weather App SD</title>
   </head>
   <body>
-    <div class="container"> 
-      <div class="Weather">          
-            <div class="card col-9 forecast">
-              
-              
-        <div class="card-body">
-          <form id="search-form" class="mb-2">
-<div class="row">
-            <div class="col-7">
-<input
-            type="search"
-            class="form-control w-150 input"
-            placeholder="Search city..."
-            autofocus="on"
-            id="city-input"
-            autocomplete="off"
-            class="search-city"
-          />
-          </div>
-          <div class="col-4">
-            <input type="submit"  value="Search" class="btn btn-dark w-100"/></div>
-
-          </div>
-          </form>
-          
-          
-          
-          
-        <div>
-          <div class="card search">
-          <h2 class="col-5 m-2 city"><span id="city"></span></h2>
-
-          <div class="row ml-3">
-            <div class="col-6 weather-icon">
-              <div class="clearfix">
-                <img src="" alt="" id="icon" width="90"/>
-                <div class="float-left">
-                  <span class="temperature" id="temperature"></span>
-                  <span class="units">°C</span>
+    <div class="container">
+      <div class="Weather">
+        <div class="card col-9 forecast">
+          <div class="card-body">
+            <form id="search-form" class="mb-2">
+              <div class="row">
+                <div class="col-7">
+                  <input
+                    type="search"
+                    class="form-control w-150 input"
+                    placeholder="Search city..."
+                    autofocus="on"
+                    id="city-input"
+                    autocomplete="off"
+                    class="search-city"
+                  />
+                </div>
+                <div class="col-4">
+                  <input
+                    type="submit"
+                    value="Search"
+                    class="btn btn-dark w-100"
+                  />
                 </div>
               </div>
+            </form>
+            <div>
+              <div class="card search">
+                <h2 class="col-5 m-2 city"><span id="city"></span></h2>
+                <div class="row ml-3">
+                  <div class="col-6 weather-icon">
+                    <div class="clearfix">
+                      <img src="" alt="" id="icon" />
+                      <div class="float-left">
+                        <span class="temperature" id="temperature"></span>
+                        <span class="units">°C</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <ul class="list-group list-group-flush measure">
+                      <li>Humidity: <span id="humidity"></span> %</li>
+                      <li>Wind: <span id="wind"></span> KMH</li>
+                    </ul>
+                    <p class="description" id="description"></p>
+                    <div class="feel">Feels like: <span id="feel"></span>°</div>
+                  </div>
+                </div>
+                <p class="update" id="time">Updated: <span id="date"></span></p>
+                <div class="forecast-weather" id="forecast-weather"></div>
+                <small class="footer" id="footer">
+                  <a
+                    href="https://github.com/DBusie/vanilla-weather-app"
+                    ,
+                    target="_blank"
+                    class="footer"
+                    >Open-source code </a
+                  >by Busi Shumba</small
+                >
+              </div>
             </div>
-
-            <div class="col-6 ">
-              <ul class="list-group list-group-flush measure">
-                                <li>Humidity: <span id="humidity"></span> %</li>
-                <li>Wind: <span id="wind"></span> KMH</li>
-              </ul>
-              <p class="description" id="description">
-              </p>
-               <div class="feel">
-             Feels like:  <span id="feel"></span>°</div>
-            </div>
-          </div>        
-            <p class="update" id="time">Updated:  <span id="date"></span>          
-            </p>
           </div>
-                    <div class="forecast-weather" id="forecast-weather"></div>
-                                      
-        </div><small class="footer">
-        <a
-          href="https://github.com/DBusie/vanilla-weather-app"
-          ,
-          target="_blank">Open-source code </a
-        >by Busi Shumba</small> 
-                </div>    </div>   
-              </div>       
-            </div></div></div></div></div></div></div>
-
+        </div>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

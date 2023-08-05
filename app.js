@@ -4,7 +4,26 @@ function formatDate(timestamp) {
   if (hours < 10) {
     hours = `0${hours}`;
   }
+  let dateElement = date.getDate();
+  if (dateElement < 10) {
+    dateElement = `0${dateElement}`;
+  }
 
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[date.getMonth()];
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -21,7 +40,7 @@ function formatDate(timestamp) {
   ];
 
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day}, ${dateElement} ${month} ${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
@@ -36,7 +55,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast-weather");
   let forecastHTML = `<div class="row">`;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (forecastDay, index) {
+  forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       let celsiusMax = forecastDay.temperature.maximum;
       let celsiusMin = forecastDay.temperature.minimum;
@@ -45,9 +64,13 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="col-2">
           <div class="forecast-date">${formatDay(forecastDay.time)}</div>
-          <img src="${forecastDay.condition.icon_url}" alt=""/>
+          <img src="${forecastDay.condition.icon_url}" alt="${
+          forecastDay.condition.icon
+        }"/>
           <div class="forecast-temperature">
-            <span class="forecast-max">${Math.round(celsiusMax)}</span>°
+            <span class="forecast-max"><strong>${Math.round(
+              celsiusMax
+            )}</strong></span>°
             <span class="forecast-min">${Math.round(celsiusMin)}</span>°
           </div>
         </div>`;
@@ -84,7 +107,7 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.weather);
-  getForecast(`${response}`);
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {
