@@ -1,32 +1,35 @@
+:root {
+  --bg-col-1: #f89007;
+  --bg-col-2: #d9fae1;
+  --bg-col-3: #fcffe7;
+  --col-1: #110202;
+  --col-2: #fc9004e5;
+  --col-3: #4f07f8;
+  --col-4: #720ef5;
+  --headings-font: "Poppins", sans-serif;
+  --main-font: "Rubik", sans-serif;
+}
+
 .forecast {
-  background: #f89007;
-  margin: 0 auto;
-  border-radius: 25px;
-  margin-bottom: 50px;
-  max-height: 490px;
-  max-width: 700px;
-  margin-top: 50px;
+  background: var(--bg-col-1);
+  font-family: var(--main-font);
+  font-size: 18px;
 }
+
 .search {
-  background: #d9fae1;
-  margin: 0 auto;
-  margin-bottom: 50px;
+  background: var(--bg-col-2);
   border-radius: 45px;
-  height: 395px;
-  max-width: 700px;
 }
-.elements {
-  line-height: 30px;
-}
+
 #temperature {
-  color: #fc9004e5;
+  color: var(--col-2);
   font-size: 60px;
   font-weight: 700;
 }
 
 #icon {
-  margin-bottom: -16px;
-  margin-top: -12px;
+  position: relative;
+  margin-top: -25px;
 }
 
 #date,
@@ -34,15 +37,17 @@
 #humidity,
 #feel,
 #city {
-  color: #4f07f8;
+  color: var(--col-3);
 }
 
 .city {
   line-height: 30px;
   text-align: center;
+  margin: 0;
+  padding: 4px;
 }
 .search-city {
-  background: #fcffe7;
+  background: var(--bg-col-3);
   line-height: 30px;
   text-align: center;
 }
@@ -52,11 +57,12 @@
   text-align: center;
 }
 #footer {
-  color: #720ef5;
+  color: var(--col-4);
   font-size: 12px;
 }
 .description {
   text-transform: capitalize;
+  font-size: 26px;
 }
 .update {
   margin-left: 20px;
@@ -64,13 +70,9 @@
 }
 ul {
   list-style: none;
+  padding: 0;
 }
-.measure {
-  line-height: 26px;
-}
-.weather-icon {
-  padding-left: calc(var(--bs-gutter-x) * 2.5);
-}
+
 .units {
   color: #110202;
   position: relative;
@@ -81,18 +83,37 @@ ul {
   margin-top: 10px;
   margin-bottom: 20px;
   text-align: center;
-  color: #110202;
+  color: var(--col-1);
 }
 
 .forecast-date {
-  font-size: 16px;
-  color: #110202;
+  color: var(--col-1);
 }
 
-.forecast-temperature {
-  font-size: 13px;
+.forecast-max,
+.forecast-min {
   color: #fc9004e5;
 }
 .forecast-min {
   opacity: 0.9;
+}
+.weather-condition {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+@media (max-width: 300) {
+  .search {
+    text-align: center;
+  }
+  .weather-condition {
+    padding: 0;
+  }
+  .weather-condition img {
+    padding: 4px;
+    text-align: center;
+  }
+  .city {
+    margin: 0;
+    padding: 4px;
+  }
 }

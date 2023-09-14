@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;700&family=Playfair+Display:ital,wght@0,900;1,800&family=Poppins:wght@400;700;800&family=Rubik:wght@300;400&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Vanilla Weather App SD</title>
   </head>
   <body>
     <div class="container">
-      <div class="Weather">
-        <div class="card col-9 forecast">
+      <div class="Weather bg-success bg-opacity-10 rounded p-2">
+        <div class="card forecast m-3 rounded-5">
           <div class="card-body">
             <form id="search-form" class="mb-2">
               <div class="row">
@@ -41,42 +46,54 @@
                 </div>
               </div>
             </form>
-            <div>
-              <div class="card search">
-              <div class="row d-flex">
-                <h2 class="col-6 m-2 city"><span id="city"></span></h2></div>
-                                <div class="col-6 weather-icon">
-                    <div class="clearfix">
-                      <img src="" alt="" id="icon" />
-                      <div class="float-left">
-                        <span class="temperature" id="temperature"></span>
-                        <span class="units">°C</span>
-                      </div>
+            <div class="card search">
+              <div class="d-flex flex-row">
+                <h2 class="ms-5 p-3 city"><span id="city"></span></h2>
+              </div>
+              <div class="container">
+                <div class="row d-flex text-center">
+                  <div
+                    class="col-sm-4 justify-contents-between weather-condition"
+                  >
+                    <img
+                      src=""
+                      alt=""
+                      id="icon"
+                      title="Weather Condition"
+                      class="img-fluid mb-1"
+                    />
+                    <span class="temperature" id="temperature"></span>
+                    <span class="units">°C</span>
+                  </div>
+                  <div
+                    class="col-sm-4 shadow-sm rounded-4 text-center weather-condition"
+                  >
+                    <p class="description m-0" id="description"></p>
+                    <div class="feel m-0">
+                      Feels like: <span id="feel"></span>°
                     </div>
-                  </div></div>
-                  <div class="col-6">
-                    <ul class="list-group list-group-flush measure">
+                  </div>
+                  <div class="col-sm-4 weather-condition">
+                    <ul>
                       <li>Humidity: <span id="humidity"></span> %</li>
                       <li>Wind: <span id="wind"></span> KMH</li>
                     </ul>
-                    <p class="description" id="description"></p>
-                    <div class="feel">Feels like: <span id="feel"></span>°</div>
                   </div>
                 </div>
-                <p class="update" id="time">Updated: <span id="date"></span></p></div>
-                <div class="forecast-weather" id="forecast-weather"></div>
-                <small class="footer" id="footer">
-                  <a
-                    href="https://github.com/DBusie/vanilla-weather-app"
-                    ,
-                    target="_blank"
-                    class="footer"
-                    >Open-source code </a
-                  >by Busi Shumba</small
-                >
               </div>
+              <p class="update" id="time">Updated: <span id="date"></span></p>
+              <div class="forecast-weather" id="forecast-weather"></div>
             </div>
           </div>
+          <small class="footer" id="footer mb-5">
+            Open-source code by
+            <a
+              href="https://github.com/DBusie/vanilla-weather-app"
+              target="_blank"
+              class="footer"
+              >Busi Shumba</a
+            ></small
+          >
         </div>
       </div>
     </div>
